@@ -2,7 +2,7 @@ package com.github.pigsteel.eum.platform.neoforge;
 
 //? neoforge {
 
-/*import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.core.EUMDataAttachments;
 import com.github.pigsteel.eum.core.particles.CustomSimpleParticleType;
 import com.github.pigsteel.eum.platform.Platform;
@@ -16,6 +16,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataSerializer;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
@@ -27,6 +28,8 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.sensing.Sensor;
 import net.minecraft.world.entity.ai.sensing.SensorType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.neoforge.attachment.AttachmentType;
@@ -59,7 +62,7 @@ public class NeoforgePlatform implements Platform {
 
 	@Override
 	public boolean isDevelopmentEnvironment() {
-		return !FMLLoader/^? if > 1.21.7 {^/.getCurrent()/^?}^/.isProduction();
+		return !FMLLoader/*? if > 1.21.7 {*/.getCurrent()/*?}*/.isProduction();
 	}
 
 	@Override
@@ -78,9 +81,9 @@ public class NeoforgePlatform implements Platform {
 	}
 
 	@Override
-	public <T extends Entity> Supplier<EntityType<T>> register(String id, EntityType.Builder<T> builder) {
-		ResourceKey<EntityType<?>> key = EUM.key(Registries.ENTITY_TYPE, id);
-		return ENTITIES.register(id, () -> builder.build(key));
+	public <T extends Entity> Supplier<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
+		ResourceKey<EntityType<?>> key = EUM.key(Registries.ENTITY_TYPE, name);
+		return ENTITIES.register(name, () -> builder.build(key));
 	}
 
 	@Override
@@ -124,14 +127,14 @@ public class NeoforgePlatform implements Platform {
 	}
 
 	@Override
-	public <A> EUMDataAttachments.DataAttachmentHandle<A> register(String id, Consumer<EUMDataAttachments.AgnosticBuilder<A>> consumer) {
-		EUMDataAttachments.AgnosticBuilder<A> builder = EUMDataAttachments.builder();
+	public <A> DataAttachmentHandle<A> register(String name, Consumer<AgnosticBuilder<A>> consumer) {
+		AgnosticBuilder<A> builder = Platform.builder();
 
 		consumer.accept(builder);
 
-		Supplier<AttachmentType<A>> attachment = ATTACHMENT_TYPES.register(id, () -> builder.neoforgeImpl().build());
+		Supplier<AttachmentType<A>> attachment = ATTACHMENT_TYPES.register(name, () -> builder.neoforgeImpl().build());
 
-		return new EUMDataAttachments.DataAttachmentHandle<A>() {
+		return new DataAttachmentHandle<A>() {
 			@Override
 			public boolean hasAttached(Entity entity) {
 				return entity.hasData(attachment);
@@ -164,5 +167,21 @@ public class NeoforgePlatform implements Platform {
 			}
 		};
 	}
+
+	@Override
+	public Supplier<Block> register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+		return BLOCKS.register(
+				name,
+				(registryId) -> blockFactory.apply(properties.setId(ResourceKey.create(Registries.BLOCK, registryId)))
+		);
+	}
+
+	@Override
+	public Supplier<Block> register(BlockItemId id, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+		return BLOCKS.register(
+				id.block().identifier().getPath(),
+				(registryId) -> blockFactory.apply(properties.setId(ResourceKey.create(Registries.BLOCK, registryId)))
+		);
+	}
 }
-*///?}
+//?}

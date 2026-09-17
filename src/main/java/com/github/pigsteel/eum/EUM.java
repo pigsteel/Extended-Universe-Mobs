@@ -2,6 +2,7 @@ package com.github.pigsteel.eum;
 
 import com.github.pigsteel.eum.client.model.geom.EUMLayerDefinitions;
 import com.github.pigsteel.eum.client.model.geom.EUMModelLayers;
+import com.github.pigsteel.eum.core.EUMBlocks;
 import com.github.pigsteel.eum.core.EUMDataAttachments;
 import com.github.pigsteel.eum.core.EUMDataComponents;
 import com.github.pigsteel.eum.core.EUMDefaultAttributes;
@@ -27,10 +28,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //? fabric {
-import com.github.pigsteel.eum.platform.fabric.FabricPlatform;
-//?} neoforge {
-/*import com.github.pigsteel.eum.platform.neoforge.NeoforgePlatform;
- *///?}
+/*import com.github.pigsteel.eum.platform.fabric.FabricPlatform;
+*///?} neoforge {
+import com.github.pigsteel.eum.platform.neoforge.NeoforgePlatform;
+ //?}
 
 @SuppressWarnings("LoggingSimilarMessage")
 public class EUM {
@@ -48,6 +49,7 @@ public class EUM {
 		EUMEntityDataSerializers.load();
 		EUMEntityTypes.load();
 		EUMItems.load();
+		EUMBlocks.load();
 		EUMDefaultAttributes.load();
 		EUMDataComponents.load();
 		EUMLootTables.load();
@@ -74,10 +76,10 @@ public class EUM {
 
 	private static Platform createPlatformInstance() {
 		//? fabric {
-		return new FabricPlatform();
-		//?} neoforge {
-		/*return new NeoforgePlatform();
-		 *///?}
+		/*return new FabricPlatform();
+		*///?} neoforge {
+		return new NeoforgePlatform();
+		 //?}
 	}
 
 	public static Identifier id(String path) {

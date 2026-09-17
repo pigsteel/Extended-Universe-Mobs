@@ -1,7 +1,7 @@
 package com.github.pigsteel.eum.platform.neoforge;
 
 //? neoforge {
-/*import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.EUM;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -30,6 +30,7 @@ import java.util.function.Supplier;
 public class NeoforgeVariables {
 	public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, EUM.MOD_ID);
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(EUM.MOD_ID);
+	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EUM.MOD_ID);
 	public static final DeferredRegister.DataComponents DATA_COMPONENTS = DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, EUM.MOD_ID);
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, EUM.MOD_ID);
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, EUM.MOD_ID);
@@ -45,6 +46,7 @@ public class NeoforgeVariables {
 	public static void registerAll(IEventBus modBus) {
 		ATTACHMENT_TYPES.register(modBus);
 		ITEMS.register(modBus);
+		BLOCKS.register(modBus);
 		DATA_COMPONENTS.register(modBus);
 		SOUND_EVENTS.register(modBus);
 		ENTITIES.register(modBus);
@@ -71,4 +73,4 @@ public class NeoforgeVariables {
 		}
 	}
 }
-*///?}
+//?}

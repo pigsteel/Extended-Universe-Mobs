@@ -2,7 +2,7 @@ package com.github.pigsteel.eum.platform.fabric;
 
 //? fabric {
 
-import com.github.pigsteel.eum.EUM;
+/*import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.core.EUMDataAttachments;
 import com.github.pigsteel.eum.core.particles.CustomSimpleParticleType;
 import com.github.pigsteel.eum.platform.Platform;
@@ -176,8 +176,15 @@ public class FabricPlatform implements Platform {
 			}
 		};
 	}
+
+	Supplier<Block> register(ResourceKey<Block> id, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+		// Create the block instance
+		Block block = blockFactory.apply(properties.setId(id));
+
+		return Registry.register(BuiltInRegistries.BLOCK, id, block);
+	}
 }
-//?}
+*///?}
 
 
 
