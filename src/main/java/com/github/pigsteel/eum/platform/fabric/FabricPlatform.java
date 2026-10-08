@@ -24,6 +24,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataSerializer;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
@@ -36,6 +37,8 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.sensing.Sensor;
 import net.minecraft.world.entity.ai.sensing.SensorType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -140,14 +143,14 @@ public class FabricPlatform implements Platform {
 	}
 
 	@Override
-	public <A> EUMDataAttachments.DataAttachmentHandle<A> register(String id, Consumer<EUMDataAttachments.AgnosticBuilder<A>> consumer) {
-		EUMDataAttachments.AgnosticBuilder<A> builder = EUMDataAttachments.builder();
+	public <A> DataAttachmentHandle<A> register(String id, Consumer<AgnosticBuilder<A>> consumer) {
+		AgnosticBuilder<A> builder = Platform.builder();
 
 		consumer.accept(builder);
 
 		AttachmentType<A> attachment = AttachmentRegistry.create(EUM.id(id), builder::fabricImpl);
 
-		return new EUMDataAttachments.DataAttachmentHandle<A>() {
+		return new DataAttachmentHandle<A>() {
 			@Override
 			public boolean hasAttached(Entity entity) {
 				return entity.hasAttached(attachment);
@@ -177,11 +180,21 @@ public class FabricPlatform implements Platform {
 		};
 	}
 
+	@Override
+	public Supplier<Block> register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+		return null;
+	}
+
+	@Override
+	public Supplier<Block> register(BlockItemId id, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+		return null;
+	}
+
 	Supplier<Block> register(ResourceKey<Block> id, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
 		// Create the block instance
 		Block block = blockFactory.apply(properties.setId(id));
-
-		return Registry.register(BuiltInRegistries.BLOCK, id, block);
+		var var10000 = Registry.register(BuiltInRegistries.BLOCK, id, block);
+		return () -> var10000;
 	}
 }
 *///?}

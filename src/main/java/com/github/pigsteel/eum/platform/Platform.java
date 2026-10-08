@@ -2,6 +2,7 @@ package com.github.pigsteel.eum.platform;
 
 import com.github.pigsteel.eum.core.EUMDataAttachments;
 import com.mojang.serialization.Codec;
+
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -25,7 +26,6 @@ import net.minecraft.world.entity.ai.sensing.SensorType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.neoforged.neoforge.attachment.AttachmentType;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Objects;
@@ -34,6 +34,13 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
+
+//? fabric {
+/*import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
+*///?} neoforge {
+import net.neoforged.neoforge.attachment.AttachmentType;
+//?}
 
 public interface Platform {
 	boolean isModLoaded(String modId);
