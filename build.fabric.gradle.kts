@@ -21,14 +21,6 @@ stonecutter {
 			"import net.fabricmc.api.EnvType;\n" +
 			"import net.fabricmc.api.Environment;"
 		)
-		replace(
-			"//@OnlyIn",
-			"@Environment"
-		)
-		replace(
-			"Dist.CLIENT",
-			"EnvType.CLIENT"
-		)
 	}
 }
 
