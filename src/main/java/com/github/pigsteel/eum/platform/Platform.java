@@ -40,11 +40,11 @@ import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 //? fabric {
-import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+/*import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
-//?} neoforge {
-/*import net.neoforged.neoforge.attachment.AttachmentType;
-*///?}
+*///?} neoforge {
+import net.neoforged.neoforge.attachment.AttachmentType;
+//?}
 
 public interface Platform {
 	boolean isModLoaded(String modId);
@@ -145,7 +145,7 @@ public interface Platform {
 		}
 
 		//? fabric {
-		public void fabricImpl(AttachmentRegistry.Builder<A> builder) {
+		/*public void fabricImpl(AttachmentRegistry.Builder<A> builder) {
 			if(this.defaultInitializer != null) {
 				builder.initializer(this.defaultInitializer);
 			}
@@ -162,10 +162,10 @@ public interface Platform {
 				builder.copyOnDeath();
 			}
 		}
-		//?}
+		*///?}
 
 		//? neoforge {
-		/*public AttachmentType.Builder<A> neoforgeImpl() {
+		public AttachmentType.Builder<A> neoforgeImpl() {
 			Objects.requireNonNull(defaultInitializer, "defaultInitializer cannot be null");
 
 			AttachmentType.Builder<A> builder = AttachmentType.builder(defaultInitializer);
@@ -184,7 +184,7 @@ public interface Platform {
 
 			return builder;
 		}
-		*///?}
+		//?}
 	}
 
 	enum ModLoader {
