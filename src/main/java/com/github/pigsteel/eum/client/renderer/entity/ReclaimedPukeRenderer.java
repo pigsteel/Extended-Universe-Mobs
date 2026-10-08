@@ -38,8 +38,8 @@ public class ReclaimedPukeRenderer extends EntityRenderer<ReclaimedPuke, Reclaim
         submitNodeCollector.submitModel(
                 this.model, state, poseStack, RECLAIMED_PUKE_LOCATION, state.lightCoords, OverlayTexture.NO_OVERLAY, state.outlineColor
 				//? < 26.3 {
-				/*, (ModelFeatureRenderer.CrumblingOverlay) null
-				*///?}
+				, (ModelFeatureRenderer.CrumblingOverlay) null
+				//?}
         );
         poseStack.popPose();
         super.submit(state, poseStack, submitNodeCollector, camera);

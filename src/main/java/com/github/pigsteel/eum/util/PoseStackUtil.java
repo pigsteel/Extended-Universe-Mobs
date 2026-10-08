@@ -6,9 +6,9 @@ import com.mojang.math.Axis;
 public class PoseStackUtil {
 	public static void rotateDegrees(PoseStack poseStack, Axis axis, float degrees) {
 		//? < 26.3 {
-		/*poseStack.mulPose(axis.rotationDegrees(degrees));
-		*///?} >= 26.3 {
-		poseStack.rotateDegrees(axis, degrees);
-		//?}
+		poseStack.mulPose(axis.rotationDegrees(degrees));
+		//?} >= 26.3 {
+		/*poseStack.rotateDegrees(axis, degrees);
+		*///?}
 	}
 }

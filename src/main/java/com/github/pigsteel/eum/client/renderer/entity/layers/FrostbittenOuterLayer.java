@@ -44,8 +44,8 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
 						overlayCoords,
 						state.outlineColor
 						//? < 26.3 {
-						/*, (ModelFeatureRenderer.CrumblingOverlay) null
-						 *///?}
+						, (ModelFeatureRenderer.CrumblingOverlay) null
+						 //?}
 				);
             } else {
                 submitNodeCollector.order(1).submitModel(
@@ -57,8 +57,8 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
 						overlayCoords,
 						state.outlineColor
 						//? < 26.3 {
-						/*, (ModelFeatureRenderer.CrumblingOverlay) null
-						 *///?}
+						, (ModelFeatureRenderer.CrumblingOverlay) null
+						 //?}
 				);
             }
         }

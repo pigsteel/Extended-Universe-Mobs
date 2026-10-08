@@ -51,8 +51,8 @@ public class EnchanterBookLayer extends RenderLayer<EnchanterRenderState, Enchan
 					OverlayTexture.NO_OVERLAY,
 					state.outlineColor
 					//? < 26.3 {
-					/*, (ModelFeatureRenderer.CrumblingOverlay) null
-					 *///?}
+					, null
+					 //?}
 			);
 
 			poseStack.popPose();

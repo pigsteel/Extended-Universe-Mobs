@@ -21,8 +21,8 @@ import net.minecraft.world.entity.player.Player;
 *///?}
 
 //? >= 26.2 {
-import net.minecraft.world.entity.EntityTypes;
-//?}
+/*import net.minecraft.world.entity.EntityTypes;
+*///?}
 
 public class EntityTypesUtil {
 	private EntityTypesUtil() {
@@ -37,21 +37,21 @@ public class EntityTypesUtil {
 
 	static {
 		//? <26.2 {
-		/*IRON_GOLEM = EntityType.IRON_GOLEM;
+		IRON_GOLEM = EntityType.IRON_GOLEM;
 		PIGLIN_BRUTE = EntityType.PIGLIN_BRUTE;
 		SKELETON = EntityType.SKELETON;
 		WITCH = EntityType.WITCH;
 		ZOMBIE = EntityType.ZOMBIE;
 		ZOMBIE_HORSE = EntityType.ZOMBIE_HORSE;
 		PLAYER = EntityType.PLAYER;
-		*///?} >=26.2 {
-		IRON_GOLEM = EntityTypes.IRON_GOLEM;
+		//?} >=26.2 {
+		/*IRON_GOLEM = EntityTypes.IRON_GOLEM;
 		PIGLIN_BRUTE = EntityTypes.PIGLIN_BRUTE;
 		SKELETON = EntityTypes.SKELETON;
 		WITCH = EntityTypes.WITCH;
 		ZOMBIE = EntityTypes.ZOMBIE;
 		ZOMBIE_HORSE = EntityTypes.ZOMBIE_HORSE;
 		PLAYER = EntityTypes.PLAYER;
-		//?}
+		*///?}
 	}
 }
