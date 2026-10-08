@@ -1,7 +1,6 @@
 package com.github.pigsteel.eum.core;
 
 import com.github.pigsteel.eum.EUM;
-import net.minecraft.client.particle.EndRodParticle;
 import net.minecraft.core.particles.SimpleParticleType;
 
 import java.util.function.Supplier;

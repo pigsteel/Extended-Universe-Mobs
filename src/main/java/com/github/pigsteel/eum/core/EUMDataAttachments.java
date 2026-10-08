@@ -2,25 +2,10 @@ package com.github.pigsteel.eum.core;
 
 import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.platform.Platform;
-//? fabric {
-/*import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
-*///?} neoforge {
-import net.neoforged.neoforge.attachment.AttachmentType;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
-//?}
 import com.mojang.serialization.Codec;
-import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.world.entity.Entity;
-import org.jspecify.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class EUMDataAttachments {
 	// for reference: use these when we want to attach arbitrary data (the same way we would with an EntityDataAccessor) for an entity we do not own; like the zombie

@@ -1,6 +1,5 @@
 package com.github.pigsteel.eum.core;
 
-import com.github.pigsteel.eum.network.EUMLevelEventPacketPayload;
 //? fabric {
 /*import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;

@@ -1,7 +1,6 @@
 package com.github.pigsteel.eum.core;
 
 import com.github.pigsteel.eum.EUM;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Item;
