@@ -12,7 +12,11 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.syncher.EntityDataSerializer;
+//? >= 26.2 {
 import net.minecraft.references.BlockItemId;
+//?} < 26.2 {
+/*import com.github.pigsteel.eum.util.BlockItemId;
+ *///?}
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
