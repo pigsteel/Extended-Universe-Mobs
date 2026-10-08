@@ -11,23 +11,6 @@ stonecutter {
 		replace("ResourceLocation", "Identifier")
 		replace("location()", "identifier()")
 	}
-
-	replacements.string(true) {
-		replace(
-			"import net.fabricmc.api.EnvType;\n" +
-				"import net.fabricmc.api.Environment;",
-			"import net.neoforged.api.distmarker.Dist;\n" +
-				"import net.neoforged.api.distmarker.OnlyIn;"
-		)
-		replace(
-			"@Environment",
-			"//@OnlyIn"
-		)
-		replace(
-			"EnvType.CLIENT",
-			"Dist.CLIENT"
-		)
-	}
 }
 
 platform {
