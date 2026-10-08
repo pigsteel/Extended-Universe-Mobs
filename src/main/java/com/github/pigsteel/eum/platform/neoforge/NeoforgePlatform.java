@@ -2,7 +2,7 @@ package com.github.pigsteel.eum.platform.neoforge;
 
 //? neoforge {
 
-/*import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.core.EUMDataAttachments;
 import com.github.pigsteel.eum.core.particles.CustomSimpleParticleType;
 import com.github.pigsteel.eum.platform.Platform;
@@ -17,8 +17,8 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataSerializer;
 //? >= 26.2 {
-/^import net.minecraft.references.BlockItemId;
-^///?} < 26.2 {
+/*import net.minecraft.references.BlockItemId;
+*///?} < 26.2 {
 import com.github.pigsteel.eum.util.BlockItemId;
  //?}
 import net.minecraft.resources.ResourceKey;
@@ -66,7 +66,7 @@ public class NeoforgePlatform implements Platform {
 
 	@Override
 	public boolean isDevelopmentEnvironment() {
-		return !FMLLoader/^? if > 1.21.7 {^/.getCurrent()/^?}^/.isProduction();
+		return !FMLLoader/*? if > 1.21.7 {*/.getCurrent()/*?}*/.isProduction();
 	}
 
 	@Override
@@ -188,4 +188,4 @@ public class NeoforgePlatform implements Platform {
 		);
 	}
 }
-*///?}
+//?}

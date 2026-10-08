@@ -1,7 +1,7 @@
 package com.github.pigsteel.eum.platform.neoforge;
 
 //? neoforge {
-/*import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.EUM;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -73,4 +73,4 @@ public class NeoforgeVariables {
 		}
 	}
 }
-*///?}
+//?}
