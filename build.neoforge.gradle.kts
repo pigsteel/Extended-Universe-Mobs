@@ -8,8 +8,18 @@ stonecutter {
 	properties.tags(version, loader)
 
 	replacements.string(current.parsed >= "1.21.11") {
-		replace("ResourceLocation", "Identifier")
+		replace(
+			"ResourceLocation",
+			"Identifier"
+		)
 		replace("location()", "identifier()")
+	}
+
+	replacements.string(current.parsed >= "26.3") {
+		replace(
+			"import net.minecraft.resources.RegistryFixedCodec;",
+			"import net.minecraft.core.registries.codec.RegistryFixedCodec;"
+		)
 	}
 }
 

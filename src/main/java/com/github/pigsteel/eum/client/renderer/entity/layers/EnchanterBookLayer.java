@@ -4,6 +4,7 @@ package com.github.pigsteel.eum.client.renderer.entity.layers;
 import com.github.pigsteel.eum.client.model.monster.enchanter.EnchanterModel;
 import com.github.pigsteel.eum.client.renderer.entity.EnchanterRenderer;
 import com.github.pigsteel.eum.client.renderer.entity.state.EnchanterRenderState;
+import com.github.pigsteel.eum.util.PoseStackUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -35,9 +36,8 @@ public class EnchanterBookLayer extends RenderLayer<EnchanterRenderState, Enchan
 			parentModel.translateBook(state, poseStack);
 
 			float open = Mth.clamp(0.0F, 0.001F, 1.0F); // to fix the Z-fighting
-
-			poseStack.mulPose(Axis.XP.rotationDegrees(-75.0F));
-			poseStack.mulPose(Axis.YP.rotationDegrees(open * 90.0F));
+			PoseStackUtil.rotateDegrees(poseStack, Axis.XP, -75.0F);
+			PoseStackUtil.rotateDegrees(poseStack, Axis.YP, open * 90.0F);
 			poseStack.translate(-3 / 16.0F, 4 / 16.0F, 2.5 / 16.0F - 0.15625 * open);
 
 			BookModel.State bookState = BookModel.State.forAnimation(0, Mth.clamp(0, 0.0F, 1.0F), Mth.clamp(0, 0.0F, 1.0F), open);
@@ -49,8 +49,10 @@ public class EnchanterBookLayer extends RenderLayer<EnchanterRenderState, Enchan
 					RenderTypes.entityCutout(BOOK_TEXTURE),
 					lightCoords,
 					OverlayTexture.NO_OVERLAY,
-					state.outlineColor,
-					null
+					state.outlineColor
+					//? < 26.3 {
+					/*, (ModelFeatureRenderer.CrumblingOverlay) null
+					 *///?}
 			);
 
 			poseStack.popPose();

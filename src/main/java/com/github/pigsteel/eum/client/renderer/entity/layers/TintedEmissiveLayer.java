@@ -65,8 +65,10 @@ public class TintedEmissiveLayer<S extends LivingEntityRenderState, M extends En
                         LivingEntityRenderer.getOverlayCoords(state, 0.0F),
                         color,
                         null,
-                        state.outlineColor,
-                        null
+                        state.outlineColor
+						//? < 26.3 {
+						/*, (ModelFeatureRenderer.CrumblingOverlay) null
+						 *///?}
                 );
             }
         }

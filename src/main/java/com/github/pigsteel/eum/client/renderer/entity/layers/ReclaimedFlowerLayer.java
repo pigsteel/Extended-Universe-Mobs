@@ -3,6 +3,7 @@ package com.github.pigsteel.eum.client.renderer.entity.layers;
 //? >= 1.21.2 {
 import com.github.pigsteel.eum.client.model.monster.zombie.ReclaimedModel;
 import com.github.pigsteel.eum.client.renderer.entity.state.ReclaimedRenderState;
+import com.github.pigsteel.eum.util.PoseStackUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -49,7 +50,7 @@ public class ReclaimedFlowerLayer extends RenderLayer<ReclaimedRenderState, Recl
                     poseStack.pushPose();
                     this.getParentModel().getHead().translateAndRotate(poseStack);
                     poseStack.translate(0.0F, -0.7F, -0.0F);
-                    poseStack.mulPose(Axis.YP.rotationDegrees(-50.0F));
+					PoseStackUtil.rotateDegrees(poseStack, Axis.YP,-50.0F);
                     poseStack.scale(-0.8F, -0.8F, 0.8F);
                     poseStack.translate(-0.5F, -0.5F, -0.5F);
                     this.submitFlowerBlock(
@@ -62,7 +63,6 @@ public class ReclaimedFlowerLayer extends RenderLayer<ReclaimedRenderState, Recl
                     poseStack.pushPose();
                     this.getParentModel().getHead().translateAndRotate(poseStack);
                     poseStack.translate(-0.25F, -0.9F, 0.25F);
-                    poseStack.mulPose(Axis.YP.rotationDegrees(0.0F));
                     final float scale = 1.0F;
                     poseStack.scale(-scale, -scale, scale);
                     poseStack.translate(-0.5F, -0.5F, -0.5F);

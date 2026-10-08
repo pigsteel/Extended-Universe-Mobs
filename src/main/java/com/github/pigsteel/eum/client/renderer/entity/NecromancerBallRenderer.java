@@ -5,6 +5,7 @@ import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.client.model.geom.EUMModelLayers;
 import com.github.pigsteel.eum.client.model.monster.necromancer.NecromancerBallModel;
 import com.github.pigsteel.eum.client.renderer.entity.state.NecromancerBallRenderState;
+import com.github.pigsteel.eum.util.PoseStackUtil;
 import com.github.pigsteel.eum.world.entity.projectile.NecromancerBall;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -44,8 +45,8 @@ public class NecromancerBallRenderer extends EntityRenderer<NecromancerBall, Nec
 
 		RenderType renderType = necromancerBallFire(NECROMANCER_BALL_LOCATION, 0.0F, vOffset);
 		poseStack.pushPose();
-		poseStack.mulPose(Axis.YP.rotationDegrees(-state.yRot));
-		poseStack.mulPose(Axis.XP.rotationDegrees(state.xRot));
+		PoseStackUtil.rotateDegrees(poseStack, Axis.YP, -state.yRot);
+		PoseStackUtil.rotateDegrees(poseStack, Axis.XP, state.xRot);
 		poseStack.scale(-1.0F, -1.0F, 1.0F);
 
 		submitNodeCollector.submitModel(
@@ -55,8 +56,10 @@ public class NecromancerBallRenderer extends EntityRenderer<NecromancerBall, Nec
 				renderType,
 				LightCoordsUtil.FULL_BRIGHT,
 				OverlayTexture.NO_OVERLAY,
-				state.outlineColor,
-				(ModelFeatureRenderer.CrumblingOverlay) null
+				state.outlineColor
+				//? < 26.3 {
+				/*, (ModelFeatureRenderer.CrumblingOverlay) null
+				*///?}
 		);
 		poseStack.popPose();
 		super.submit(state, poseStack, submitNodeCollector, camera);

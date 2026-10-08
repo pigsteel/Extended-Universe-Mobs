@@ -35,9 +35,31 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
         if (!state.isInvisible || appearsGlowingWithInvisibility) {
             int overlayCoords = FrostbittenRenderer.getOverlayCoords(state, 0.0F);
             if (appearsGlowingWithInvisibility) {
-                submitNodeCollector.order(1).submitModel(model, state, poseStack, RenderTypes.outline(layerLocation), lightCoords, overlayCoords, state.outlineColor, (ModelFeatureRenderer.CrumblingOverlay)null);;
+                submitNodeCollector.order(1).submitModel(
+						model,
+						state,
+						poseStack,
+						RenderTypes.outline(layerLocation),
+						lightCoords,
+						overlayCoords,
+						state.outlineColor
+						//? < 26.3 {
+						/*, (ModelFeatureRenderer.CrumblingOverlay) null
+						 *///?}
+				);
             } else {
-                submitNodeCollector.order(1).submitModel(model, state, poseStack, RenderTypes.entityTranslucent(layerLocation), lightCoords, overlayCoords, state.outlineColor, (ModelFeatureRenderer.CrumblingOverlay)null);
+                submitNodeCollector.order(1).submitModel(
+						model,
+						state,
+						poseStack,
+						RenderTypes.entityTranslucent(layerLocation),
+						lightCoords,
+						overlayCoords,
+						state.outlineColor
+						//? < 26.3 {
+						/*, (ModelFeatureRenderer.CrumblingOverlay) null
+						 *///?}
+				);
             }
         }
     }
