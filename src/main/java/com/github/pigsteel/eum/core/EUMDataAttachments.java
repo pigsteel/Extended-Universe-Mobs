@@ -1,12 +1,12 @@
 package com.github.pigsteel.eum.core;
 
 import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.platform.Platform;
 //? fabric {
 /*import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 *///?} neoforge {
-import com.github.pigsteel.eum.platform.Platform;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
