@@ -17,13 +17,19 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class EUMBlocks {
+	public static final PushReaction UHH_WTF_MOJANG = //? < 26.3 {
+			/*PushReaction.DESTROY;
+	*///?} >= 26.3 {
+			PushReaction.POPPED;
+	//?}
+
 	public static final Supplier<Block> ICE_BOUQUET;
 
 	static {
 		ICE_BOUQUET = register(
 				"ice_bouquet",
 				IceBouquetBlock::new,
-				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).replaceable().noCollision().instabreak().lightLevel((statex) -> 10).sound(SoundType.WOOL).pushReaction(PushReaction.POPPED)
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).replaceable().noCollision().instabreak().lightLevel((statex) -> 10).sound(SoundType.WOOL).pushReaction(UHH_WTF_MOJANG)
 		);
 	}
 
