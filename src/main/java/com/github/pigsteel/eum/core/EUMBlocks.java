@@ -3,10 +3,10 @@ package com.github.pigsteel.eum.core;
 import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.world.level.block.IceBouquetBlock;
 //? >= 26.2 {
-/*import net.minecraft.references.BlockItemId;
-*///?} < 26.2 {
-import com.github.pigsteel.eum.util.BlockItemId;
-//?}
+import net.minecraft.references.BlockItemId;
+//?} < 26.2 {
+/*import com.github.pigsteel.eum.util.BlockItemId;
+*///?}
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;

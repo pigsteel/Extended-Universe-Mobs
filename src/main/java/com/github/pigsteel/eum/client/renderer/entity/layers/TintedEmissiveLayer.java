@@ -66,7 +66,7 @@ public class TintedEmissiveLayer<S extends LivingEntityRenderState, M extends En
                         color,
                         null,
                         state.outlineColor
-						//? < 26.3 {
+						//? < 26.3 || !neoforge {
 						, null
 						 //?}
                 );

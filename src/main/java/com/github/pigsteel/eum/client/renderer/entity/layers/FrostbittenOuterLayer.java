@@ -43,7 +43,7 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
 						lightCoords,
 						overlayCoords,
 						state.outlineColor
-						//? < 26.3 {
+						//? < 26.3 || !neoforge {
 						, (ModelFeatureRenderer.CrumblingOverlay) null
 						 //?}
 				);
@@ -56,7 +56,7 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
 						lightCoords,
 						overlayCoords,
 						state.outlineColor
-						//? < 26.3 {
+						//? < 26.3 || !neoforge {
 						, (ModelFeatureRenderer.CrumblingOverlay) null
 						 //?}
 				);

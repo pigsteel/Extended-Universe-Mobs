@@ -2,7 +2,7 @@ package com.github.pigsteel.eum.platform.neoforge;
 
 //? neoforge {
 
-import com.github.pigsteel.eum.EUM;
+/*import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.core.EUMParticleTypes;
 import com.github.pigsteel.eum.network.EUMLevelEventPacketPayload;
 import net.minecraft.client.particle.FlameParticle;
@@ -56,4 +56,4 @@ public class NeoforgeClientEventSubscriber {
 		);
 	}
 }
-//?}
+*///?}

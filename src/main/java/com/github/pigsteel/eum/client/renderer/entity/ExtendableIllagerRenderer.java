@@ -25,8 +25,8 @@ public abstract class ExtendableIllagerRenderer<T extends AbstractIllager, S ext
 		state.maxCrossbowChargeDuration = state.armPose == AbstractIllager.IllagerArmPose.CROSSBOW_CHARGE ? CrossbowItem.getChargeDuration(entity.getUseItem(), entity) : 0;
 		state.ticksUsingItem = entity.getTicksUsingItem(partialTicks);
 		//? < 26.3 {
-		state.attackAnim = entity.getAttackAnim(partialTicks);
-		//?}
+		/*state.attackAnim = entity.getAttackAnim(partialTicks);
+		*///?}
 		state.isAggressive = entity.isAggressive();
 	}
 }

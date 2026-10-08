@@ -2,7 +2,7 @@ package com.github.pigsteel.eum.platform.fabric;
 
 //? fabric  {
 
-/*import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.util.EntityTypesUtil;
 import com.github.pigsteel.eum.world.entity.monster.VilerWitch;
 import com.github.pigsteel.eum.world.entity.monster.zombie.Frostbitten;
@@ -108,4 +108,4 @@ public class FabricEntitySpawns {
         );
     }
 }
-*///?}
+//?}

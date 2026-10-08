@@ -22,7 +22,7 @@ stonecutter {
 			"import net.fabricmc.api.Environment;"
 		)
 	}
-	replacements.string(current.parsed >= "26.3") {
+	replacements.string(false) {
 		replace(
 			"import net.minecraft.resources.RegistryFixedCodec;",
 			"import net.minecraft.core.registries.codec.RegistryFixedCodec;"
