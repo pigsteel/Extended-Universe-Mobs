@@ -56,6 +56,10 @@ public class Frostbitten extends Zombie implements RangedAttackMob {
 
     public Frostbitten(EntityType<? extends Frostbitten> type, Level level) {
         super(type, level);
+		//? >= 26.4 {
+
+		//?}
+
         this.reassessWeaponGoal();
     }
 
