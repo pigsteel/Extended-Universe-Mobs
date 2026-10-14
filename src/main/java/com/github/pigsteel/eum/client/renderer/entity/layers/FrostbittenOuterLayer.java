@@ -43,9 +43,9 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
 						lightCoords,
 						overlayCoords,
 						state.outlineColor
-						//? < 26.3 || !neoforge {
-						, (ModelFeatureRenderer.CrumblingOverlay) null
-						 //?}
+						//? < 26.3 {
+						/*, (ModelFeatureRenderer.CrumblingOverlay) null
+						 *///?}
 				);
             } else {
                 submitNodeCollector.order(1).submitModel(
@@ -56,9 +56,9 @@ public class FrostbittenOuterLayer extends RenderLayer<FrostbittenRenderState, F
 						lightCoords,
 						overlayCoords,
 						state.outlineColor
-						//? < 26.3 || !neoforge {
-						, (ModelFeatureRenderer.CrumblingOverlay) null
-						 //?}
+						//? < 26.3 {
+						/*, (ModelFeatureRenderer.CrumblingOverlay) null
+						 *///?}
 				);
             }
         }

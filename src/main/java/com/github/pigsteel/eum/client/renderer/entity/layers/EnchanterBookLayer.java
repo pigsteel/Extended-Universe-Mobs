@@ -50,9 +50,9 @@ public class EnchanterBookLayer extends RenderLayer<EnchanterRenderState, Enchan
 					lightCoords,
 					OverlayTexture.NO_OVERLAY,
 					state.outlineColor
-					//? < 26.3 || !neoforge {
-					, null
-					 //?}
+					//? < 26.3 {
+					/*, null
+					 *///?}
 			);
 
 			poseStack.popPose();

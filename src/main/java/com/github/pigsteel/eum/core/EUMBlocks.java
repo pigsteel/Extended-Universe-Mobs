@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 public class EUMBlocks {
 	public static final PushReaction UHH_WTF_MOJANG = //? < 26.3 || fabric {
 			PushReaction.DESTROY;
-	//?} >= 26.3 && neoforge {
+	//?} >= 26.3 {
 			/*PushReaction.POPPED;
 	*///?}
 

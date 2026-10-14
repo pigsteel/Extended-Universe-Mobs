@@ -37,9 +37,9 @@ public class ReclaimedPukeRenderer extends EntityRenderer<ReclaimedPuke, Reclaim
 		PoseStackUtil.rotateDegrees(poseStack, Axis.ZP, state.xRot);
         submitNodeCollector.submitModel(
                 this.model, state, poseStack, RECLAIMED_PUKE_LOCATION, state.lightCoords, OverlayTexture.NO_OVERLAY, state.outlineColor
-				//? < 26.3 || !neoforge {
-				, (ModelFeatureRenderer.CrumblingOverlay) null
-				//?}
+				//? < 26.3 {
+				/*, (ModelFeatureRenderer.CrumblingOverlay) null
+				*///?}
         );
         poseStack.popPose();
         super.submit(state, poseStack, submitNodeCollector, camera);
