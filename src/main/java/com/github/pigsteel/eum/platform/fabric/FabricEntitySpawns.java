@@ -7,10 +7,16 @@ import com.github.pigsteel.eum.util.EntityTypesUtil;
 import com.github.pigsteel.eum.world.entity.monster.VilerWitch;
 import com.github.pigsteel.eum.world.entity.monster.zombie.Frostbitten;
 import com.github.pigsteel.eum.world.entity.monster.zombie.Reclaimed;
+import com.mojang.serialization.MapCodec;
+import net.fabricmc.fabric.api.biome.v1.BiomeModificationContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.ClampedInt;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -33,17 +39,9 @@ public class FabricEntitySpawns {
 
                             spawnSettings.removeSpawnsOfEntityType(EntityTypesUtil.ZOMBIE);
 
-                            spawnSettings.addSpawn(
-                                    MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(EntityTypesUtil.ZOMBIE, 4, 4),
-                                    15
-                            );
+							addSpawn(spawnSettings, MobCategory.MONSTER, EntityTypesUtil.ZOMBIE, 4, 4, 15);
 
-                            spawnSettings.addSpawn(
-                                    MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(FROSTBITTEN.get(), 4, 4),
-                                    80
-                            );
+                            addSpawn(spawnSettings, MobCategory.MONSTER, FROSTBITTEN.get(), 4, 4, 80);
                         }
                 );
 
@@ -56,17 +54,9 @@ public class FabricEntitySpawns {
 
                             spawnSettings.removeSpawnsOfEntityType(EntityTypesUtil.ZOMBIE);
 
-                            spawnSettings.addSpawn(
-                                    MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(EntityTypesUtil.ZOMBIE, 4, 4),
-                                    10
-                            );
+                            addSpawn(spawnSettings, MobCategory.MONSTER, EntityTypesUtil.ZOMBIE, 4, 4, 10);
 
-                            spawnSettings.addSpawn(
-                                    MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(RECLAIMED.get(), 4, 4),
-                                    85
-                            );
+							addSpawn(spawnSettings, MobCategory.MONSTER, RECLAIMED.get(), 4, 4, 85);
                         }
                 );
 
@@ -78,11 +68,7 @@ public class FabricEntitySpawns {
 
                             spawnSettings.removeSpawnsOfEntityType(EntityTypesUtil.WITCH);
 
-                            spawnSettings.addSpawn(
-                                    MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(VILER_WITCH.get(), 1, 1),
-                                    5
-                            );
+                            addSpawn(spawnSettings, MobCategory.MONSTER, VILER_WITCH.get(), 1, 1, 5);
                         }
                 );
     }
@@ -107,5 +93,17 @@ public class FabricEntitySpawns {
                 VilerWitch::checkMonsterSpawnRules
         );
     }
+
+	public static void addSpawn(BiomeModificationContext.MobSpawnSettingsContext spawnSettings, MobCategory mobCategory, EntityType<?> entityType, int minCount, int maxCount, int weight) {
+		//? < 26.3 {
+		/*spawnSettings.addSpawn(
+				mobCategory,
+				new MobSpawnSettings.SpawnerData(entityType, minCount, maxCount),
+				weight
+		);
+		*///?} >= 26.3 {
+		spawnSettings.addSpawn(entityType, weight, minCount, maxCount);
+		//?}
+	}
 }
 //?}

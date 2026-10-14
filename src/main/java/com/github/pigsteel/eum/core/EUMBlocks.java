@@ -17,11 +17,11 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class EUMBlocks {
-	public static final PushReaction UHH_WTF_MOJANG = //? < 26.3 || fabric {
-			PushReaction.DESTROY;
-	//?} >= 26.3 {
-			/*PushReaction.POPPED;
-	*///?}
+	public static final PushReaction UHH_WTF_MOJANG = //? < 26.3 {
+			/*PushReaction.DESTROY;
+	*///?} >= 26.3 {
+			PushReaction.POPPED;
+	//?}
 
 	public static final Supplier<Block> ICE_BOUQUET;
 
