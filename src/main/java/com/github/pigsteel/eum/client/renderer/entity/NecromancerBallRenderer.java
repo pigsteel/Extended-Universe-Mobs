@@ -57,9 +57,9 @@ public class NecromancerBallRenderer extends EntityRenderer<NecromancerBall, Nec
 				LightCoordsUtil.FULL_BRIGHT,
 				OverlayTexture.NO_OVERLAY,
 				state.outlineColor
-				//? < 26.3 || fabric {
-				, (ModelFeatureRenderer.CrumblingOverlay) null
-				//?}
+				//? < 26.3 {
+				/*, (ModelFeatureRenderer.CrumblingOverlay) null
+				*///?}
 		);
 		poseStack.popPose();
 		super.submit(state, poseStack, submitNodeCollector, camera);
