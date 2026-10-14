@@ -7,21 +7,21 @@ import org.spongepowered.asm.mixin.MixinIntrinsics;
 import org.spongepowered.asm.mixin.Shadow;
 
 //? fabric {
-@Mixin(PathType.class)
+/*@Mixin(PathType.class)
 public enum PathTypeMixin {
 	//? < 26.3 {
-	/*EUM_CLIMBABLE(0.0F);
+	/^EUM_CLIMBABLE(0.0F);
 	@Shadow
 	PathTypeMixin(float defaultCost) {}
-	*///?} >= 26.3 {
+	^///?} >= 26.3 {
 	EUM_CLIMBABLE(MixinIntrinsics.currentEnumOrdinal(), 0.0F);
 	@Shadow
 	PathTypeMixin(int id, float defaultCost) {}
 	//?}
 }
-//?} neoforge {
-/*@Mixin(EUM.class)
+*///?} neoforge {
+@Mixin(EUM.class)
 public class PathTypeMixin { // dud
 
 }
-*///?}
+//?}
