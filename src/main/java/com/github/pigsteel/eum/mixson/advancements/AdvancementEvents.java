@@ -64,19 +64,30 @@ public class AdvancementEvents {
 
 		// creating the inner condition item object
 		JsonObject conditionItem = new JsonObject();
-		conditionItem.addProperty("condition", "minecraft:entity_properties");
+		//? < 26.3 {
+		/*conditionItem.addProperty("condition", "minecraft:entity_properties");
+		*///?} >= 26.3 {
+		conditionItem.addProperty("type", "minecraft:entity_properties");
+		//?}
+
 		conditionItem.addProperty("entity", "this");
 		conditionItem.add("predicate", predicate);
 
-		// creating the entities array and add the condition item: [...]
+		JsonObject conditions = new JsonObject();
+
+		//? < 26.3 {
+		/*// creating the entities array and add the condition item: [...]
 		JsonArray entityArray = new JsonArray();
 		entityArray.add(conditionItem);
 
-		// 4. Create the conditions object: {"entity": [...]}
-		JsonObject conditions = new JsonObject();
+		// creating the conditions object: {"entity": [...]}
 		conditions.add("entity", entityArray);
+		*///?} >= 26.3 {
+		// just add it as a property lol
+		conditions.add("entity", conditionItem);
+		//?}
 
-		// 5. Create the inner body: {"conditions": {...}, "trigger": "..."}
+		// creating the inner body: {"conditions": {...}, "trigger": "..."}
 		JsonObject innerBody = new JsonObject();
 		innerBody.add("conditions", conditions);
 		innerBody.addProperty("trigger", "minecraft:player_killed_entity");

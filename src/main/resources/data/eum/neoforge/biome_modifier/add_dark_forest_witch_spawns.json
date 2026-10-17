@@ -8,13 +8,15 @@
       "type": "minecraft:zombie",
       "weight": 10,
       "minCount": 4,
-      "maxCount": 4
+      "maxCount": 4,
+      "count": 4
     },
     {
       "type": "eum:reclaimed",
       "weight": 85,
       "minCount": 4,
-      "maxCount": 4
+      "maxCount": 4,
+      "count": 4
     }
   ]
 }

@@ -12,13 +12,15 @@
       "type": "minecraft:zombie",
       "weight": 15,
       "minCount": 4,
-      "maxCount": 4
+      "maxCount": 4,
+      "count": 4
     },
     {
       "type": "eum:frostbitten",
       "weight": 80,
       "minCount": 4,
-      "maxCount": 4
+      "maxCount": 4,
+      "count": 4
     }
   ]
 }

@@ -2,7 +2,7 @@ package com.github.pigsteel.eum.platform.fabric;
 
 //? fabric  {
 
-/*import com.github.pigsteel.eum.EUM;
+import com.github.pigsteel.eum.EUM;
 import com.github.pigsteel.eum.util.EntityTypesUtil;
 import com.github.pigsteel.eum.world.entity.monster.VilerWitch;
 import com.github.pigsteel.eum.world.entity.monster.zombie.Frostbitten;
@@ -96,14 +96,14 @@ public class FabricEntitySpawns {
 
 	public static void addSpawn(BiomeModificationContext.MobSpawnSettingsContext spawnSettings, MobCategory mobCategory, EntityType<?> entityType, int minCount, int maxCount, int weight) {
 		//? < 26.3 {
-		/^spawnSettings.addSpawn(
+		/*spawnSettings.addSpawn(
 				mobCategory,
 				new MobSpawnSettings.SpawnerData(entityType, minCount, maxCount),
 				weight
 		);
-		^///?} >= 26.3 {
+		*///?} >= 26.3 {
 		spawnSettings.addSpawn(entityType, weight, minCount, maxCount);
 		//?}
 	}
 }
-*///?}
+//?}

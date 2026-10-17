@@ -28,10 +28,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //? fabric {
-/*import com.github.pigsteel.eum.platform.fabric.FabricPlatform;
-*///?} neoforge {
-import com.github.pigsteel.eum.platform.neoforge.NeoforgePlatform;
- //?}
+import com.github.pigsteel.eum.platform.fabric.FabricPlatform;
+//?} neoforge {
+/*import com.github.pigsteel.eum.platform.neoforge.NeoforgePlatform;
+ *///?}
 
 @SuppressWarnings("LoggingSimilarMessage")
 public class EUM {
@@ -76,10 +76,10 @@ public class EUM {
 
 	private static Platform createPlatformInstance() {
 		//? fabric {
-		/*return new FabricPlatform();
-		*///?} neoforge {
-		return new NeoforgePlatform();
-		 //?}
+		return new FabricPlatform();
+		//?} neoforge {
+		/*return new NeoforgePlatform();
+		 *///?}
 	}
 
 	public static Identifier id(String path) {
