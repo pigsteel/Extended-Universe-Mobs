@@ -1,1 +1,1 @@
-- FIXED CRASH FOR 26.3 FABRIC (SORRY! D:)
+- Should launch now for both neoforge and fabric
